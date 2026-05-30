@@ -34,6 +34,10 @@ function toggleRowFlag(context: CommandContext): boolean {
 
   editor.transaction('default', () => {
     for (const row of rows) {
+      // row.text returns a live AttributedString; mutate it in place.
+      // Do NOT reassign row.text = text — assigning the row's own text
+      // object back through the setter triggers a Swift exclusive-access
+      // crash (SIGABRT in swift_beginAccess).
       const text = row.text
       const range: [number, number] = [0, text.count]
       if (unmark) {
@@ -41,8 +45,6 @@ function toggleRowFlag(context: CommandContext): boolean {
       } else {
         text.addAttribute(MARK, '', range)
       }
-      // Reassign to commit the mutated AttributedString back to the row.
-      row.text = text
     }
   })
 
