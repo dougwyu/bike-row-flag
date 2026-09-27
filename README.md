@@ -22,7 +22,6 @@ Then reload extensions in Bike (or restart it).
 
 ```bash
 npm install
-touch node_modules/@bike-outliner/extension-kit/api/core/globals.d.ts  # recreate missing stub
 npm run build
 npm test        # run unit tests (Bike must be closed)
 ```
