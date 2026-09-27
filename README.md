@@ -28,6 +28,8 @@ npm test        # run unit tests (Bike must be closed)
 
 The build system is [`bike-ext`](https://github.com/bike-outliner/extension-kit).
 
+`npm test` installs the build into Bike's sandboxed container (`~/Library/Containers/com.hogbaysoftware.Bike/...`), which macOS protects. Run it from Terminal with Full Disk Access granted (System Settings > Privacy & Security > Full Disk Access). From any other shell the install fails with `EPERM` and the tests silently run against whatever copy is already installed.
+
 ### Note on editing row text
 
 `row.text` returns a *live* `AttributedString`. Mutate it in place with
