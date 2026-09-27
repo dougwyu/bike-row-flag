@@ -2,6 +2,7 @@
   "$schema": "../../node_modules/@bike-outliner/extension-kit/schemas/manifest.schema.json",
   "version": "0.1.0",
   "api_version": "0.0.0",
+  "description": "Toggle a row's highlight with one keystroke (Cmd-Shift-F).",
   "permissions": [],
   "host_permissions": []
 }
