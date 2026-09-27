@@ -11,12 +11,15 @@ Toggle a row's highlight with one keystroke. Press **⌘⇧F** anywhere in a row
 
 ## Install
 
-```bash
-cp -r out/extensions/row-flag.bkext/ \
-  ~/Library/Containers/com.hogbaysoftware.Bike/Data/Library/Application\ Support/Bike/Extensions/row-flag.bkext/
-```
+1. Download `row-flag.bkext.zip` from the [latest release](https://github.com/dougwyu/bike-row-flag/releases/latest) and unzip it.
+2. Quit Bike.
+3. In Finder, press ⌘⇧G and go to `~/Library/Containers/com.hogbaysoftware.Bike/Data/Library/Application Support/Bike/Extensions/`.
+4. Move `row-flag.bkext` into that folder, replacing any older copy.
+5. Reopen Bike.
 
-Then reload extensions in Bike (or restart it).
+Use Finder rather than `cp` in a shell: macOS protects Bike's container, and a shell without Full Disk Access gets `Operation not permitted`.
+
+To install your own build instead, run `npm test` (see below), which builds and installs it in one step.
 
 ## Development
 
